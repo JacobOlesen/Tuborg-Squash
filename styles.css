@@ -4,37 +4,98 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
-
-.fade-horizontal {
+  .fade {
     background-image: linear-gradient(to right, #eba63c, white);
-    width: 100%;
-    height: 100%;
-  }
-
-  .artikelbaggrund {
     display: flex;
-    height: 1000px;
-    align-items: center;
+    padding-top: 100px;
   }
-  .artikelbaggrund img {
-    height: 700px;
-    margin-right: 50px;
+  .fade h1, .fade h2, .fade p {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.6;
+  }
+  .fade h2{
+    font-size: 10pt;
+    font-weight: 400;
+  }
+  .fade hr{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: .7px solid black;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-row{
+    display: flex;
+  }
+
+  .flaske-laptop {
     box-shadow: 5px 10px 18px #000000;
-    
+    height: 600px;
+    margin: 100px;
   }
 
-  .artikelbaggrund h1 {
+  .info{
+    padding-top: 100px;
     margin-left: 100px;
-    margin-top: 100px;
-    color: #284a41;
-
   }
+  .info p{
+    margin-top: 20px;
+  }
+
+  .næringsindhold, .ingredienser{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+  }
+  .næringsindhold div{
+    margin-right: 20px;
+  }
+  
+
+  @media only screen and (min-width: 890px){
+    .flaske-mobil{
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 890px){
+    .flaske-laptop{
+      display: none;
+    }
+    .fade{
+      flex-direction: column;
+    }
+    .flaske-flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flaske-mobil{
+      box-shadow: 5px 10px 18px #000000;
+      height: 500px;
+      margin-top: 100px;
+      background-color: red;
+      padding: 10px;
+    }
+    .info, .næringsindhold, .ingredienser{
+      margin-right: 100px;
+    }
+  }
+
+
+
+
 
 
 
 /* ARTIKEL 1 */
+.body-fade{
+  background-image: linear-gradient(to top, #eba63c, white);
+}
 .imgartikel1 {
   width: 100%;
 }
@@ -47,10 +108,9 @@
 .float-box{
   text-align: center;
   position: relative;
-  bottom: 150px;
+  bottom: 100px;
   background-color: white;
-  padding: 30px 30px 0px 30px;
-  margin-bottom: -50px;
+  padding: 30px 30px 30px 30px;
   width: 60%;
   min-width: 300px;
 
@@ -58,16 +118,13 @@
 
 .float-box h1{
   font-size: 34pt;
-  font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 16px;
-  
 }
 .float-box h3{
   font-size: 20pt;
-  font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 16px;
 }
-.float-box h5{
+.float-box h5, .float-box h3, .float-box h1{
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -207,14 +264,13 @@
   /* NAV HEADER */
   header{
     position: fixed;
-    top:0; left:0; right:0;
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    box-shadow: 0 5px 10px rgba(0,0,0,.7);
     padding: 0px 7%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background: orange;
     z-index: 1000;
+    width: 100%;
     height: 150px;
   }
   header img{
@@ -222,6 +278,7 @@
   }
 
   header .navbar{
+    
   }
   header .navbar ul{
     list-style: none;
@@ -232,20 +289,26 @@
     padding: 5px;
   }
   header .navbar ul li a{
-    padding: 9px;
-    display: block;
+    padding: 10px;
+    display: flex;
     text-decoration: none;
     color: black;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 15pt;
+    font-size: 17pt;
     transition: all 0.3s ease 0s;
+    background-color: white;
+    border-radius: 10px;
+    border: solid yellow 2px;
+    justify-content: center;
+    width: 160px;
+
   }
   header .navbar ul li:hover{
-    background-color: yellowgreen;
+
   }
   header .navbar ul li a:hover{
-    color: yellow;
-    width: 100%;
+    color: orange;
+    
   }
   header .navbar ul li ul{
     position: absolute;
@@ -253,10 +316,10 @@
     width: 100%;
     display: none;
   }
-  header .navbar ul li ul li{
-    width: 100%;
-    border-top: 1px solid rgba(0,0,0,.1);
+  header .navbar ul li ul li a{
+    font-size: 13pt;
   }
+
 
   header .navbar ul li:hover > ul{
     display: initial;
@@ -280,11 +343,12 @@
     header{
       padding: 20px;
       width: 100%;
-      height: 125px;
+      height: 140px;
     }
-    header label{
+    header label, #hjem{
       display: initial;
       font-size: 40pt;
+      color: black;
     }
     header .navbar{
       position: absolute;
@@ -303,23 +367,22 @@
     #menu-bar:checked ~ .navbar{
       display: initial;
     }
-    header img{
-      padding-left: 50px;
-    }
-    #hjem{
-      display: initial;
-      display: flex;
-      align-items: center;
-    }
-    #hjem a{
-      color: black;
-      font-size: 40pt;
-      position: absolute;
-      right: 20px;
-    }
 
     button{
       display: none;
     }
 
+    .nav-mobil{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
   }
+
+
+
+
+
+
