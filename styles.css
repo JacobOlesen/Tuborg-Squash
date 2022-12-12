@@ -296,7 +296,7 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 17pt;
     transition: all 0.3s ease 0s;
-    background-color: white;
+    background-color: orange;
     border-radius: 10px;
     border: solid yellow 2px;
     justify-content: center;
@@ -307,7 +307,7 @@
 
   }
   header .navbar ul li a:hover{
-    color: orange;
+    color: yellow;
     
   }
   header .navbar ul li ul{
