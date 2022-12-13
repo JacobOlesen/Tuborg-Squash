@@ -4,7 +4,42 @@
     box-sizing: border-box;
 }
 
+/* Main Page */
+.mainpagebox{
+  height: 1000px;
+  background-color: green;
+}
 
+.flexbox{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: blue;
+}
+.artikelbox{
+  width: 354px;
+}
+.artikelbox img{
+  width: 100%;
+  height: 320px;
+}
+.artikelbox{
+  background-color: yellow;
+  height: 400px;
+  width: 25%;
+}
+.gul h1{
+
+}
+
+
+
+
+
+
+/* Produktbeskrivelse */
   .fade {
     background-image: linear-gradient(to right, #eba63c, white);
     display: flex;
@@ -210,7 +245,7 @@
     display: flex;
     justify-content: center;
     height: 100px;
-    background: green;
+    background: orange;
   }
 
   .some {
@@ -243,8 +278,9 @@
   }
   .some ul li:hover a .ikon {
     transform: translateY(-25px);
+    color: yellow;
   }
-  .some ul li a .tekst {
+  .some ul li a .footertekst {
     position: absolute;
     color: black;
     font-weight: 400;
@@ -253,11 +289,38 @@
     transition: 0.5s;
     opacity: 0;
     transform: translateY(20px);
+    font-family: 'Roboto Condensed', sans-serif;
   }
-  .some ul li:hover a .tekst {
+  .some ul li:hover a .footertekst {
     opacity: 1;
     transform: translateY(0px);
+    color: yellow;
   }
+
+
+  .navfooter {
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+    padding-bottom: 50px;
+
+}
+.navfooter a {
+    padding-left: 25px;
+    padding-right: 25px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+}
+.navfooter a:hover {
+  color: yellow;
+  transition: all 0.3s ease 0s;
+}
+/* vertikal streg mellem nav i footeren */
+.border {
+  border-right: 2px solid black;
+}
 
 
 
