@@ -5,34 +5,87 @@
 }
 
 /* Main Page */
-.mainpagebox{
-  height: 1000px;
-  background-color: green;
-}
 
-.flexbox{
+/* 3 cardscontainer på forsiden */
+.flexboxartikler{
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: blue;
+  background-color: orange;
 }
 .artikelbox{
-  width: 354px;
+  width: 30%;
+  height: 300px;
+  border: solid yellow 1px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.2);
+  background-blend-mode: darken;
+  text-decoration: none;
 }
-.artikelbox img{
-  width: 100%;
-  height: 320px;
+.artikelbox:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.0);
+  transition: 0.3s;
 }
-.artikelbox{
-  background-color: yellow;
-  height: 400px;
-  width: 25%;
+.artikelbox h1{
+  color: yellow;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 25pt;
+  font-weight: 200;
+  width: 90%;
+  position: relative;
+  top: 210px;
+  left: 20px;
 }
-.gul h1{
+#forsidekonkurrence{
+  background-image: url(images/forsidekonkurrence.jpg);
+  background-position: center;
+}
+#forsidesafarisquash{
+  background-image: url(images/forsidesafarisquash.jpg);
+  background-position: center;
+}
+#forsidetipsogtricks{
+  background-image: url(images/forsidetipsogtricks.jpg);
+  background-position: center;
+}
 
+@media only screen and (max-width: 890px){
+  .flexboxartikler{
+    flex-direction: column;
+  }
+  .artikelbox{
+    width: 70%;
+    margin-top: 50px;
+  }
+  #forsidekonkurrence, #forsidesafarisquash, #forsidetipsogtricks{
+    background-size: cover;
+  }
 }
+
+.forsidebygditlandshold{
+  display: flex;
+}
+.opstilling{
+  background-color: lightgreen;
+  width: 50%;
+}
+.opstillingflex{
+  display: flex;
+  justify-content: center;
+}
+.opstilling div img{
+  width: 75px;
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+
 
 
 
@@ -243,6 +296,7 @@
 
   .footer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     height: 100px;
     background: orange;
@@ -305,7 +359,7 @@
     padding-bottom: 50px;
 
 }
-.navfooter a {
+  .navfooter a {
     padding-left: 25px;
     padding-right: 25px;
     text-decoration: none;
@@ -313,12 +367,12 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 300;
 }
-.navfooter a:hover {
+  .navfooter a:hover {
   color: yellow;
   transition: all 0.3s ease 0s;
 }
-/* vertikal streg mellem nav i footeren */
-.border {
+  /* vertikal streg mellem nav i footeren */
+  .border {
   border-right: 2px solid black;
 }
 
