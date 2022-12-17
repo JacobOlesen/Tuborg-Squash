@@ -6,6 +6,59 @@
 
 /* Main Page */
 
+.velkommen{
+  height: 1000px;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.velkommen div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.velkommen div h1{
+  font-family: 'Lobster Two';
+  font-size: 100pt;
+  animation: fadeInAnimation ease 8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.velkommen div h2{
+  font-family: 'Lobster Two';
+  font-size: 30pt;
+  font-weight: 400;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 890px){
+  .velkommen div h1{
+    font-size: 60pt;
+  }
+  .velkommen div h2{
+    font-size: 20pt;
+  }
+}
+
 /* 3 cardscontainer på forsiden */
 .flexboxartikler{
   display: flex;
@@ -14,11 +67,13 @@
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: orange;
+  border-radius: 20px;
+  margin: 30px;
 }
 .artikelbox{
   width: 30%;
   height: 300px;
-  border: solid yellow 1px;
+  border: solid white 3px;
   border-radius: 10px;
   background-color: rgba(0,0,0,0.2);
   background-blend-mode: darken;
@@ -30,10 +85,11 @@
   transition: 0.3s;
 }
 .artikelbox h1{
-  color: yellow;
+  color: white;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 25pt;
-  font-weight: 200;
+  font-weight: 400;
+  letter-spacing: 1.5px;
   width: 90%;
   position: relative;
   top: 210px;
@@ -41,15 +97,16 @@
 }
 #forsidekonkurrence{
   background-image: url(images/forsidekonkurrence.jpg);
-  background-position: center;
 }
 #forsidesafarisquash{
   background-image: url(images/forsidesafarisquash.jpg);
-  background-position: center;
 }
 #forsidetipsogtricks{
   background-image: url(images/forsidetipsogtricks.jpg);
+}
+#forsidetipsogtricks, #forsidesafarisquash, #forsidekonkurrence{
   background-position: center;
+  background-size: cover;
 }
 
 @media only screen and (max-width: 890px){
@@ -65,23 +122,96 @@
   }
 }
 
+
 .forsidebygditlandshold{
+  font-family: 'Roboto Condensed', sans-serif;
   display: flex;
+  background-color: orange;
+  border-radius: 50px;
+  margin: 30px;
+  height: 800px;
 }
+
 .opstilling{
-  background-color: lightgreen;
-  width: 50%;
-}
-.opstillingflex{
+  width: 500px;
   display: flex;
   justify-content: center;
 }
-.opstilling div img{
-  width: 75px;
+
+.opstilling img{
+  width: 72px;
   padding: 10px;
+}
+#hide img{
   margin-left: 20px;
   margin-right: 20px;
 }
+#main h1{
+  background-color: orange;
+  padding: 10px;
+  border: solid white 3px;
+  border-radius: 10px;
+}
+#main{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+#show, #hide {
+  background-image: url(images/lineup.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#show{
+  display: none;
+}
+
+#show img{
+  height: 160px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: auto;
+}
+#main:hover + #show {
+  display: block;
+}
+#main:hover ~ #hide {
+  display: none;
+}
+
+#landsholdleft{
+  padding: 50px;
+}
+#landsholdleft h2{
+  font-size: 40pt;
+}
+#landsholdleft h3{
+  font-size: 20pt;
+  margin-top: 30px;
+}
+#landsholdleft h4{
+  margin-top: 30px;
+  font-size: 15pt;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 890px){
+  .forsidebygditlandshold{
+    flex-direction: column;
+    align-items: center;
+    height: 1400px;
+  }
+  #show, #hide{
+    margin-right: 0px;
+  }
+}
+
+
 
 
 
@@ -385,18 +515,17 @@
     padding: 0px 7%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background: orange;
     z-index: 1000;
     width: 100%;
     height: 150px;
+    margin-bottom: 150px;
   }
   header img{
     width: 250px;
   }
 
-  header .navbar{
-    
-  }
   header .navbar ul{
     list-style: none;
   }
@@ -415,16 +544,13 @@
     transition: all 0.3s ease 0s;
     background-color: orange;
     border-radius: 10px;
-    border: solid yellow 2px;
+    border: solid white 2px;
     justify-content: center;
     width: 160px;
 
   }
-  header .navbar ul li:hover{
-
-  }
   header .navbar ul li a:hover{
-    color: yellow;
+    color: white;
     
   }
   header .navbar ul li ul{
@@ -454,6 +580,21 @@
   #hjem{
     display: none;
   }
+
+  /* Lavet et tidligt breakpoint for at gøre logo og nav mindre, så det forbliver på samme linje */
+  @media only screen and (max-width: 1100px){
+    header img{
+      width: 200px;
+    }
+    header .navbar ul li a{
+      font-size: 12pt;
+      width: 130px;
+    }
+    header .navbar ul li ul li a{
+      font-size: 10pt;
+    }
+  }
+  
 
 
   @media(max-width:900px){
