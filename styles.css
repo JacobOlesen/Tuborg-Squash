@@ -1,646 +1,586 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Main Page */
-
-.velkommen{
-  height: 1000px;
-  background-color: orange;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.velkommen div{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.velkommen div h1{
-  font-family: 'Lobster Two';
-  font-size: 100pt;
-  animation: fadeInAnimation ease 8s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-.velkommen div h2{
-  font-family: 'Lobster Two';
-  font-size: 30pt;
-  font-weight: 400;
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+/* Logo */
+header img{
+width: 250px;
 }
 
-@media only screen and (max-width: 890px){
-  .velkommen div h1{
-    font-size: 60pt;
-  }
-  .velkommen div h2{
-    font-size: 20pt;
-  }
+/* NAV HEADER */
+header{
+position: fixed;
+box-shadow: 0 5px 10px rgba(0,0,0,.4);
+padding: 0px 7%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: orange;
+z-index: 1000;
+width: 100%;
+height: 150px;
+margin-bottom: 150px;
+}
+header .navbar ul{
+list-style: none;
+}
+header .navbar ul li{
+position: relative;
+float: left;
+padding-left: 5px;
+}
+header .navbar ul li a{
+background-color: #fe830d;
+padding: 10px;
+display: flex;
+text-decoration: none;
+color: black;
+font-family: 'Lobster Two';
+font-size: 20pt;
+transition: all 0.3s ease 0s;
+font-weight: 600;
+justify-content: center;
+width: 190px;
+border: solid white 2px;
+}
+header .navbar ul li a:hover{
+color: white;
+}
+header .navbar ul li ul{
+position: absolute;
+left: 0;
+
+display: none;
+}
+header .navbar ul li ul li a{
+font-size: 13pt;
+background-color: #fe830d;
+}
+header .navbar ul li:hover > ul{
+display: initial;
+}
+#menu-bar{
+display: none;
+}
+header label{
+cursor: pointer;
+font-family: 'Roboto Condensed', sans-serif;
+display: none;
+}
+#hjem{
+display: none;
 }
 
-/* 3 cardscontainer på forsiden */
-.flexboxartikler{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  background-color: orange;
-  border-radius: 20px;
-  margin: 30px;
+/* Lavet et tidligt breakpoint for at gøre logo og nav mindre, så det forbliver på samme linje */
+@media only screen and (max-width: 1200px){
+header img{
+  width: 200px;
 }
-.artikelbox{
-  width: 30%;
-  height: 300px;
-  border: solid white 3px;
-  border-radius: 10px;
-  background-color: rgba(0,0,0,0.2);
-  background-blend-mode: darken;
-  text-decoration: none;
+header .navbar ul li a{
+  font-size: 12pt;
+  width: 130px;
 }
-.artikelbox:hover {
-  cursor: pointer;
-  background-color: rgba(0,0,0,0.0);
-  transition: 0.3s;
+header .navbar ul li ul li a{
+  font-size: 10pt;
 }
-.artikelbox h1{
-  color: white;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 25pt;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  width: 90%;
-  position: relative;
-  top: 210px;
-  left: 20px;
 }
-#forsidekonkurrence{
-  background-image: url(images/forsidekonkurrence.jpg);
+@media only screen and (max-width:900px){
+header{
+  padding: 20px;
+  width: 100%;
+  height: 140px;
 }
-#forsidesafarisquash{
-  background-image: url(images/forsidesafarisquash.jpg);
-}
-#forsidetipsogtricks{
-  background-image: url(images/forsidetipsogtricks.jpg);
-}
-#forsidetipsogtricks, #forsidesafarisquash, #forsidekonkurrence{
-  background-position: center;
-  background-size: cover;
-}
-
-@media only screen and (max-width: 890px){
-  .flexboxartikler{
-    flex-direction: column;
-  }
-  .artikelbox{
-    width: 70%;
-    margin-top: 50px;
-  }
-  #forsidekonkurrence, #forsidesafarisquash, #forsidetipsogtricks{
-    background-size: cover;
-  }
-}
-
-
-.forsidebygditlandshold{
-  font-family: 'Roboto Condensed', sans-serif;
-  display: flex;
-  background-color: orange;
-  border-radius: 50px;
-  margin: 30px;
-  height: 800px;
-}
-
-.opstilling{
-  width: 500px;
-  display: flex;
-  justify-content: center;
-}
-
-.opstilling img{
-  width: 72px;
-  padding: 10px;
-}
-#hide img{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-#main h1{
-  background-color: orange;
-  padding: 10px;
-  border: solid white 3px;
-  border-radius: 10px;
-}
-#main{
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  margin-right: 20px;
-}
-
-#show, #hide {
-  background-image: url(images/lineup.png);
-  background-size: cover;
-  background-position: center;
-  border-radius: 50px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-#show{
-  display: none;
-}
-
-#show img{
-  height: 160px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  width: auto;
-}
-#main:hover + #show {
-  display: block;
-}
-#main:hover ~ #hide {
-  display: none;
-}
-
-#landsholdleft{
-  padding: 50px;
-}
-#landsholdleft h2{
+header label, #hjem{
+  display: initial;
   font-size: 40pt;
+  color: black;
 }
-#landsholdleft h3{
-  font-size: 20pt;
-  margin-top: 30px;
+header .navbar{
+  position: absolute;
+  top:100%; left:0%; right:0%;
+  border-top: 1px solid rgba(0,0,0,.1);
+  display: none;
 }
-#landsholdleft h4{
-  margin-top: 30px;
-  font-size: 15pt;
-  font-weight: 400;
-}
-
-@media only screen and (max-width: 890px){
-  .forsidebygditlandshold{
-    flex-direction: column;
-    align-items: center;
-    height: 1400px;
-  }
-  #show, #hide{
-    margin-right: 0px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* Produktbeskrivelse */
-  .fade {
-    background-image: linear-gradient(to right, #eba63c, white);
-    display: flex;
-    padding-top: 100px;
-  }
-  .fade h1, .fade h2, .fade p {
-    font-family: 'Roboto Condensed', sans-serif;
-    line-height: 1.6;
-  }
-  .fade h2{
-    font-size: 10pt;
-    font-weight: 400;
-  }
-  .fade hr{
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: .7px solid black;
-  }
-
-  .flex {
-    display: flex;
-    flex-direction: column;
-  }
-  .flex-row{
-    display: flex;
-  }
-
-  .flaske-laptop {
-    box-shadow: 5px 10px 18px #000000;
-    height: 600px;
-    margin: 100px;
-  }
-
-  .info{
-    padding-top: 100px;
-    margin-left: 100px;
-  }
-  .info p{
-    margin-top: 20px;
-  }
-
-  .næringsindhold, .ingredienser{
-    margin-top: 25px;
-    margin-bottom: 25px;
-    margin-left: 100px;
-  }
-  .næringsindhold div{
-    margin-right: 20px;
-  }
-  
-
-  @media only screen and (min-width: 890px){
-    .flaske-mobil{
-      display: none;
-    }
-  }
-
-  @media only screen and (max-width: 890px){
-    .flaske-laptop{
-      display: none;
-    }
-    .fade{
-      flex-direction: column;
-    }
-    .flaske-flex{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .flaske-mobil{
-      box-shadow: 5px 10px 18px #000000;
-      height: 500px;
-      margin-top: 100px;
-      background-color: red;
-      padding: 10px;
-    }
-    .info, .næringsindhold, .ingredienser{
-      margin-right: 100px;
-    }
-  }
-
-
-
-
-
-
-
-/* ARTIKEL 1 */
-.body-fade{
-  background-image: linear-gradient(to top, #eba63c, white);
-}
-.imgartikel1 {
+header .navbar ul li{
   width: 100%;
 }
-
-.flex-float-box{
-  display: flex;
-  justify-content: center;
-}
-
-.float-box{
-  text-align: center;
+header .navbar ul li ul{
   position: relative;
-  bottom: 100px;
-  background-color: white;
-  padding: 30px 30px 30px 30px;
-  width: 60%;
-  min-width: 300px;
-
+  width: 100%;
+}
+#menu-bar:checked ~ .navbar{
+  display: initial;
+}
+button{
+  display: none;
+}
+.nav-mobil{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 }
 
-.float-box h1{
-  font-size: 34pt;
-  margin-bottom: 16px;
-}
-.float-box h3{
-  font-size: 20pt;
-  margin-bottom: 16px;
-}
-.float-box h5, .float-box h3, .float-box h1{
-  font-family: 'Roboto Condensed', sans-serif;
-}
 
-.artikel{
-  padding-left: 15%;
-  padding-right: 15%;
+/* Forside */
 
+/* Første sektion "Velkommen til VM med Tuborg Squash */
+.velkommen{
+height: 1000px;
+background-color: orange;
+display: flex;
+align-items: center;
+justify-content: center;
 }
-
-.artikel div img{
-  margin-bottom: 50px;
+.velkommen div{
+display: flex;
+flex-direction: column;
+align-items: center;
 }
-
-.tekst h4{
-  font-size: 18pt;
-  font-family: 'Roboto Condensed', sans-serif;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.tekst p{
-  font-size: 14pt;
-  margin-bottom: 10px;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 300;
-  line-height: 28px;
-}
-.tekst li{
-  font-family: 'Roboto Condensed', sans-serif;
-  margin-bottom: 10px;
-}
-
-.float-box,
-.artikel{
-  animation: fadeInAnimation ease 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.velkommen div h1{
+font-family: 'Lobster Two';
+font-size: 100pt;
+animation: fadeInAnimation ease 8s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
 }
 @keyframes fadeInAnimation {
   0% {
       opacity: 0;
-      bottom: -30px;
   }
   100% {
       opacity: 1;
   }
 }
-
-@media only screen and (max-width: 890px) {
-  .flex-float-box h1{
-    font-size: 22pt;
+.velkommen div h2{
+font-family: 'Lobster Two';
+font-size: 30pt;
+font-weight: 400;
+animation: fadeInAnimation ease 3s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
   }
-
-  .flex-float-box h3{
-      font-size: 14pt;
-    }
-
-    .flex-float-box h5{
-      font-size: 8pt;
-    }
-
-    .artikel{
-      padding-left: 10%;
-      padding-right: 10%;
-  
+  100% {
+      opacity: 1;
   }
+}
+@media only screen and (max-width: 890px){
+.velkommen div h1{
+  font-size: 60pt;
+}
+.velkommen div h2{
+  font-size: 20pt;
+}
+}
 
-  .float-box{
-      bottom: 50px;
-      margin-bottom: 20px;
+/* Forside sektion med 3 artikler */
+.flexboxartikler{
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding-top: 100px;
+padding-bottom: 100px;
+background-color: #fe830d;
+margin-top: 20px;
+margin-bottom: 20px;
+
+}
+.artikelbox{
+width: 30%;
+height: 300px;
+border: solid white 3px;
+
+background-color: rgba(0,0,0,0.2);
+background-blend-mode: darken;
+text-decoration: none;
+}
+.artikelbox:hover {
+cursor: pointer;
+background-color: rgba(0,0,0,0.0);
+transition: 0.3s;
+}
+.artikelbox h1{
+color: white;
+font-family: 'Roboto Condensed', sans-serif;
+font-size: 25pt;
+font-weight: 400;
+letter-spacing: 1.5px;
+width: 90%;
+position: relative;
+top: 210px;
+left: 20px;
+}
+#forsidekonkurrence{
+background-image: url(images/forsidekonkurrence.jpg);
+}
+#forsidesafarisquash{
+background-image: url(images/forsidesafarisquash.jpg);
+}
+#forsidetipsogtricks{
+background-image: url(images/forsidetipsogtricks.jpg);
+}
+#forsidetipsogtricks, #forsidesafarisquash, #forsidekonkurrence{
+background-position: center;
+background-size: cover;
+}
+@media only screen and (max-width: 890px){
+.flexboxartikler{
+  flex-direction: column;
+}
+.artikelbox{
+  width: 70%;
+  margin-top: 50px;
+}
+#forsidekonkurrence, #forsidesafarisquash, #forsidetipsogtricks{
+  background-size: cover;
+}
+}
+
+/* Forside sektion med spil hvor man kan bygge sit eget landshold */
+.forsidebygditlandshold{
+font-family: 'Roboto Condensed', sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: orange;
+margin-top: 10px;
+margin-bottom: 20px;
+height: 1200px;
+}
+.opstilling{
+width: 500px;
+display: flex;
+justify-content: center;
+}
+.opstilling img{
+width: 72px;
+padding: 10px;
+}
+#hide img{
+margin-left: 20px;
+margin-right: 20px;
+}
+#main h1{
+background-color: #fe830d;
+padding: 10px;
+border: solid white 3px;
+}
+#main{
+padding: 10px;
+display: flex;
+justify-content: center;
+}
+#show, #hide {
+background-image: url(images/lineup.png);
+background-size: cover;
+background-position: center;
+border-radius: 10px;
+margin-bottom: 20px;
+}
+#show{
+display: none;
+}
+#show img{
+height: 160px;
+margin-top: 8px;
+margin-bottom: 8px;
+width: auto;
+}
+/* for at få spillerne frem når man hover på teksten */
+#main:hover + #show {
+display: block;
+}
+#main:hover ~ #hide {
+display: none;
+}
+#landsholdleft{
+padding: 50px;
+}
+#landsholdleft h2{
+font-size: 40pt;
+}
+#landsholdleft h3{
+font-size: 20pt;
+margin-top: 30px;
+}
+#landsholdleft h4{
+margin-top: 30px;
+font-size: 15pt;
+font-weight: 400;
+}
+@media only screen and (max-width: 890px){
+.forsidebygditlandshold{
+  height: 1420px;
+}
+}
+
+
+/* Produktbeskrivelse */
+.fade {
+  background-image: linear-gradient(to right, #eba63c, white);
+  display: flex;
+  padding-top: 100px;
+}
+.fade h1{
+  line-height: 1.6;
+  font-family: 'Lobster Two';
+}
+.fade h2, .fade p {
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.6;
+}
+.fade h2{
+  font-size: 10pt;
+  font-weight: 400;
+}
+.fade hr{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: .7px solid black;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row{
+  display: flex;
+}
+
+.flaske-laptop {
+  box-shadow: 5px 10px 18px #000000;
+  height: 600px;
+  margin: 100px;
+}
+
+.info{
+  padding-top: 100px;
+  margin-left: 100px;
+}
+.info p{
+  margin-top: 20px;
+}
+
+.næringsindhold, .ingredienser{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 100px;
+}
+.næringsindhold div{
+  margin-right: 20px;
+}
+
+
+@media only screen and (min-width: 890px){
+  .flaske-mobil{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 890px){
+  .flaske-laptop{
+    display: none;
+  }
+  .fade{
+    flex-direction: column;
+  }
+  .flaske-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flaske-mobil{
+    box-shadow: 5px 10px 18px #000000;
+    height: 500px;
+    margin-top: 100px;
+    background-color: orange;
+    padding: 10px;
+  }
+  .info, .næringsindhold, .ingredienser{
+    margin-right: 100px;
   }
 }
 
 
+/* Artikel Skabelon */
+.body-fade{
+background-image: linear-gradient(to bottom, #eba63c, white);
+}
+.imgartikel1 {
+width: 100%;
+}
+.flex-float-box{
+display: flex;
+justify-content: center;
+}
+.float-box{
+text-align: center;
+position: relative;
+bottom: 100px;
+background-color: #fe830d;
+padding: 30px 30px 30px 30px;
+width: 60%;
+min-width: 300px;
+border: solid 2px white;
+}
+.float-box h1{
+font-size: 34pt;
+margin-bottom: 16px;
+font-family: 'Lobster Two';
+}
+.float-box h3{
+font-size: 20pt;
+margin-bottom: 16px;
+}
+.float-box h5, .float-box h3{
+font-family: 'Roboto Condensed', sans-serif;
+}
+.artikel{
+padding-left: 15%;
+padding-right: 15%;
 
+}
+.artikel div img{
+margin-bottom: 50px;
+}
+.tekst h4{
+font-size: 18pt;
+font-family: 'Lobster Two';
+margin-top: 15px;
+margin-bottom: 15px;
+}
+.tekst p{
+font-size: 14pt;
+margin-bottom: 10px;
+font-family: 'Roboto Condensed', sans-serif;
+font-weight: 300;
+line-height: 28px;
+}
+/* Overskrift boxen der kommer flyvende op når siden loades */
+.float-box, .artikel{
+animation: fadeInAnimation ease 1s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+0% {
+    opacity: 0;
+    bottom: -30px;
+}
+100% {
+    opacity: 1;
+}
+}
 
+@media only screen and (max-width: 890px) {
+.flex-float-box h1{
+  font-size: 22pt;
+}
+.flex-float-box h3{
+    font-size: 14pt;
+  }
+  .flex-float-box h5{
+    font-size: 8pt;
+  }
+  .artikel{
+    padding-left: 10%;
+    padding-right: 10%;
 
+}
+.float-box{
+    bottom: 50px;
+    margin-bottom: 20px;
+}
+}
 
 
 /* FOOTER */
 
-  .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 100px;
-    background: orange;
-  }
-
-  .some {
-    width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .some ul {
-    display: flex;
-    width: 350px;
-    justify-content: center;
-  }
-  .some ul li {
-    list-style: none;
-    width: 70px;
-    height: 70px;
-  }
-  .some ul li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .some ul li a .ikon {
-    line-height: 75px;
-    font-size: 25pt;
-    transition: 0.5s;
-    color: black;
-  }
-  .some ul li:hover a .ikon {
-    transform: translateY(-25px);
-    color: yellow;
-  }
-  .some ul li a .footertekst {
-    position: absolute;
-    color: black;
-    font-weight: 400;
-    font-size: 10pt;
-    letter-spacing: 0.5pt;
-    transition: 0.5s;
-    opacity: 0;
-    transform: translateY(20px);
-    font-family: 'Roboto Condensed', sans-serif;
-  }
-  .some ul li:hover a .footertekst {
-    opacity: 1;
-    transform: translateY(0px);
-    color: yellow;
-  }
-
-
-  .navfooter {
-    display: flex;
-    justify-content: center;
-    background-color: orange;
-    padding-bottom: 50px;
-
+/* Ikonerne i footeren */
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100px;
+  background: orange;
 }
-  .navfooter a {
-    padding-left: 25px;
-    padding-right: 25px;
-    text-decoration: none;
-    color: black;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 300;
+.some {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-  .navfooter a:hover {
-  color: yellow;
-  transition: all 0.3s ease 0s;
+.some ul {
+  display: flex;
+  width: 350px;
+  justify-content: center;
 }
-  /* vertikal streg mellem nav i footeren */
-  .border {
-  border-right: 2px solid black;
+.some ul li {
+  list-style: none;
+  width: 70px;
+  height: 70px;
+}
+.some ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.some ul li a .ikon {
+  line-height: 75px;
+  font-size: 25pt;
+  transition: 0.5s;
+  color: black;
+}
+.some ul li:hover a .ikon {
+  transform: translateY(-25px);
+  color: white;
+}
+.some ul li a .footertekst {
+  position: absolute;
+  color: black;
+  font-weight: 400;
+  font-size: 10pt;
+  letter-spacing: 0.5pt;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.some ul li:hover a .footertekst {
+  opacity: 1;
+  transform: translateY(0px);
+  color: white;
 }
 
+/* Nederste del af footeren */
+.navfooter {
+  display: flex;
+  justify-content: center;
+  background-color: orange;
+  padding-bottom: 50px;
 
-
-  /* NAV HEADER */
-  header{
-    position: fixed;
-    box-shadow: 0 5px 10px rgba(0,0,0,.7);
-    padding: 0px 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: orange;
-    z-index: 1000;
-    width: 100%;
-    height: 150px;
-    margin-bottom: 150px;
-  }
-  header img{
-    width: 250px;
-  }
-
-  header .navbar ul{
-    list-style: none;
-  }
-  header .navbar ul li{
-    position: relative;
-    float: left;
-    padding: 5px;
-  }
-  header .navbar ul li a{
-    padding: 10px;
-    display: flex;
-    text-decoration: none;
-    color: black;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 17pt;
-    transition: all 0.3s ease 0s;
-    background-color: orange;
-    border-radius: 10px;
-    border: solid white 2px;
-    justify-content: center;
-    width: 160px;
-
-  }
-  header .navbar ul li a:hover{
-    color: white;
-    
-  }
-  header .navbar ul li ul{
-    position: absolute;
-    left: 0;
-    width: 100%;
-    display: none;
-  }
-  header .navbar ul li ul li a{
-    font-size: 13pt;
-  }
-
-
-  header .navbar ul li:hover > ul{
-    display: initial;
-  }
-
-  #menu-bar{
-    display: none;
-  }
-  header label{
-    cursor: pointer;
-    font-family: 'Roboto Condensed', sans-serif;
-    display: none;
-  }
-
-  #hjem{
-    display: none;
-  }
-
-  /* Lavet et tidligt breakpoint for at gøre logo og nav mindre, så det forbliver på samme linje */
-  @media only screen and (max-width: 1100px){
-    header img{
-      width: 200px;
-    }
-    header .navbar ul li a{
-      font-size: 12pt;
-      width: 130px;
-    }
-    header .navbar ul li ul li a{
-      font-size: 10pt;
-    }
-  }
-  
-
-
-  @media(max-width:900px){
-    header{
-      padding: 20px;
-      width: 100%;
-      height: 140px;
-    }
-    header label, #hjem{
-      display: initial;
-      font-size: 40pt;
-      color: black;
-    }
-    header .navbar{
-      position: absolute;
-      top:100%; left:0%; right:0%;
-      border-top: 1px solid rgba(0,0,0,.1);
-      display: none;
-    }
-    header .navbar ul li{
-      width: 100%;
-    }
-    header .navbar ul li ul{
-      position: relative;
-      width: 100%;
-    }
-
-    #menu-bar:checked ~ .navbar{
-      display: initial;
-    }
-
-    button{
-      display: none;
-    }
-
-    .nav-mobil{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-
-  }
-
-
-
-
-
-
+}
+.navfooter a {
+  padding-left: 25px;
+  padding-right: 25px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}
+.navfooter a:hover {
+color: white;
+transition: all 0.3s ease 0s;
+}
+/* vertikal streg mellem nav i footeren */
+.border {
+border-right: 2px solid black;
+}
