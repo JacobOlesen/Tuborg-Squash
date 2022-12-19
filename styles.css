@@ -86,7 +86,7 @@ header .navbar ul li ul li a{
   font-size: 10pt;
 }
 }
-@media only screen and (max-width:900px){
+@media only screen and (max-width:890px){
 header{
   padding: 20px;
   width: 100%;
@@ -173,7 +173,7 @@ animation-fill-mode: forwards;
 }
 @media only screen and (max-width: 890px){
 .velkommen div h1{
-  font-size: 60pt;
+  font-size: 40pt;
 }
 .velkommen div h2{
   font-size: 20pt;
@@ -255,7 +255,7 @@ margin-bottom: 20px;
 height: 1200px;
 }
 .opstilling{
-width: 500px;
+width: 100%;
 display: flex;
 justify-content: center;
 }
@@ -276,6 +276,7 @@ border: solid white 3px;
 padding: 10px;
 display: flex;
 justify-content: center;
+align-items: center;
 }
 #show, #hide {
 background-image: url(images/lineup.png);
@@ -317,7 +318,14 @@ font-weight: 400;
 }
 @media only screen and (max-width: 890px){
 .forsidebygditlandshold{
-  height: 1420px;
+  height: 1510px;
+}
+#show img, #hide img{
+  height: 120px;
+  width: auto;
+}
+#main h1{
+  font-size: 15pt;
 }
 }
 
@@ -404,7 +412,8 @@ font-weight: 400;
     padding: 10px;
   }
   .info, .næringsindhold, .ingredienser{
-    margin-right: 100px;
+    margin-right: 50px;
+    margin-left: 50px;
   }
 }
 
@@ -434,12 +443,14 @@ border: solid 2px white;
 font-size: 34pt;
 margin-bottom: 16px;
 font-family: 'Lobster Two';
+font-weight: 400;
 }
-.float-box h3{
+.float-box h2{
 font-size: 20pt;
 margin-bottom: 16px;
+font-weight: 300;
 }
-.float-box h5, .float-box h3{
+.float-box h3, .float-box h2{
 font-family: 'Roboto Condensed', sans-serif;
 }
 .artikel{
@@ -483,20 +494,22 @@ animation-fill-mode: forwards;
 .flex-float-box h1{
   font-size: 22pt;
 }
-.flex-float-box h3{
+.flex-float-box h2{
     font-size: 14pt;
   }
-  .flex-float-box h5{
+  .flex-float-box h3{
     font-size: 8pt;
   }
   .artikel{
     padding-left: 10%;
     padding-right: 10%;
-
 }
 .float-box{
     bottom: 50px;
     margin-bottom: 20px;
+}
+.imgartikeltop{
+  padding-top: 100px;
 }
 }
 
@@ -583,4 +596,11 @@ transition: all 0.3s ease 0s;
 /* vertikal streg mellem nav i footeren */
 .border {
 border-right: 2px solid black;
+}
+
+@media only screen and (max-width: 890px){
+  .navfooter a{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
